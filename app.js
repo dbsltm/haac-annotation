@@ -47,7 +47,7 @@
     },
     taxonomy: {
       schemes: [
-        { key: "strategy", name: "Attack strategy", ask: "What lever does the user pull?" },
+        { key: "strategy", name: "Attack strategy", ask: "What trick does the user use to get a bad answer?" },
         { key: "harm", name: "Harm category", ask: "What failure is the user trying to cause?" },
         { key: "item", name: "Item category", ask: "What is the user shopping for?" },
       ],

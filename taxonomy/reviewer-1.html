@@ -3,7 +3,7 @@
 <meta name="robots" content="noindex,nofollow"><title>Attack Taxonomy Labelling · 1</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../style.css?v=20261123163842"></head>
+<link rel="stylesheet" href="../style.css?v=20261123164124"></head>
 <body class="tax">
 <header><div class="wrap">
   <h1>Attack Taxonomy Labelling</h1>
@@ -14,7 +14,7 @@
 <details class="box" id="howto" open><summary>How to label each item</summary>
 <p>Each item is one red-team turn against a shopping assistant. Read the user's message (and the reply, for context), then give the item three labels.</p>
 <ul>
-<li><b>Attack strategy:</b> the single structural lever the user relies on, not the topic. Use "Other" when no strategy fits cleanly.</li>
+<li><b>Attack strategy:</b> the trick the user uses to get a bad answer, such as claiming to be an expert, telling a sad story, or stating a false fact. Label the trick, not the topic: "I'm a pharmacist, skip the warnings" is Authority &amp; Credential Bypass whether it is about drugs or chemicals. Use "Other" when no strategy fits.</li>
 <li><b>Harm category:</b> the kind of failure the user is <i>trying to cause</i>. Judge the attempt, not whether it worked.</li>
 <li><b>Item category:</b> the marketplace category the user is shopping in. Use "Prompt-Injection / Meta" when the message attacks the model itself rather than asking about a product.</li>
 </ul>
@@ -50,7 +50,7 @@
   <p class="hint">Filled = all three labels given, outlined = partly done.</p>
 </section>
 </main></div>
-<script src="../config.js?v=20261123163842"></script>
-<script>window.TASK = {"task": "taxonomy", "slot": "1", "label": "Reviewer 1", "items": "items.json?v=20261123163842", "taxonomy": "taxonomy.json?v=20261123163842"};</script>
-<script src="../app.js?v=20261123163842"></script>
+<script src="../config.js?v=20261123164124"></script>
+<script>window.TASK = {"task": "taxonomy", "slot": "1", "label": "Reviewer 1", "items": "items.json?v=20261123164124", "taxonomy": "taxonomy.json?v=20261123164124"};</script>
+<script src="../app.js?v=20261123164124"></script>
 </body></html>

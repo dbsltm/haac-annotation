@@ -95,3 +95,14 @@ textarea { width: 100%; min-height: 64px; font: inherit; font-size: .88rem; bord
 .cats { font-size: .85rem; color: var(--muted); columns: 2 180px; }
 button:focus-visible, textarea:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.exs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin: 12px 0; }
+.ex { border: 1.5px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: .85rem; display: grid; gap: 4px; align-content: start; }
+.ex p { margin: 0; }
+.ex.hit { border-color: var(--hit); } .ex.miss { border-color: var(--miss); }
+.ex .tag { font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+.ex.hit .tag { color: var(--hit); } .ex.miss .tag { color: var(--miss); }
+.ex .u { background: var(--prompt-bg); border-radius: 5px; padding: 4px 6px; }
+.ex .a { color: var(--fg); }
+.ex .why { color: var(--muted); font-style: italic; }
+.chip span { display: block; }
+.chip .d { font-weight: 400; font-size: .76rem; color: var(--muted); }

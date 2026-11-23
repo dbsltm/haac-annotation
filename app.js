@@ -5,7 +5,8 @@
   const CFG = window.ANNOT_CONFIG || {}, T = window.TASK;
   const $ = (id) => document.getElementById(id);
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
-  const STORE = `annot-${T.task}-${T.slot}`;
+  const STORE = `annot-v2-${T.task}-${T.slot}`;   // bump the version to give every browser a fresh start
+  try { Object.keys(localStorage).filter(k => k.startsWith("annot-") && !k.startsWith("annot-v2-")).forEach(k => localStorage.removeItem(k)); } catch (e) {}
   let items = [], tax = null, idx = 0, st = { name: "", answers: {}, pending: {} }, sending = false, retry = null;
 
   // ---------- local store ----------

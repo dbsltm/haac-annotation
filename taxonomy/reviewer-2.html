@@ -11,14 +11,14 @@
   <div class="meta"><span id="who"></span><span class="save" id="save">Loading…</span></div>
 </div></header>
 <div class="wrap"><main>
-<details class="box" id="howto"><summary>How to label each item</summary>
+<details class="box" id="howto" open><summary>How to label each item</summary>
 <p>Each item is one red-team turn against a shopping assistant. Read the user's message (and the reply, for context), then give the item three labels.</p>
 <ul>
 <li><b>Attack strategy:</b> the single structural lever the user relies on, not the topic. Use "Other" when no strategy fits cleanly.</li>
 <li><b>Harm category:</b> the kind of failure the user is <i>trying to cause</i>. Judge the attempt, not whether it worked.</li>
 <li><b>Item category:</b> the marketplace category the user is shopping in. Use "Prompt-Injection / Meta" when the message attacks the model itself rather than asking about a product.</li>
 </ul>
-<p>Each option's definition appears when you select it, and all definitions are in the next panel. Pick the single best label for each. Please work on your own and don't compare answers until both reviewers are done.</p>
+<p>Each option's definition appears when you select it, and all definitions are in the next panel. Pick the single best label for each.</p>
 <p class="hint">Keys: <kbd>←</kbd><kbd>→</kbd> previous / next, <kbd>N</kbd> next unfinished.</p>
 </details>
 <details class="box"><summary>Label definitions</summary><div class="defs">
@@ -27,7 +27,7 @@
 <div id="msg" class="notice" hidden></div>
 <section class="gate" id="gate" hidden>
   <h2>Welcome, Reviewer 2</h2>
-  <p>Enter your name so the study team knows whose answers these are. Your answers save as you go, and you can come back to this link any time.</p>
+  <p>Enter your name so the study team knows whose answers these are.</p>
   <form id="gateForm"><input id="nameIn" autocomplete="name" placeholder="Your name" required><button class="btn primary" type="submit">Start</button></form>
 </section>
 <div class="work" id="work" hidden>

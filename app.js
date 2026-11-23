@@ -190,8 +190,7 @@
     const ids = Object.keys(st.pending); if (!ids.length || !CFG.SHEET_URL || !navigator.sendBeacon) return;
     navigator.sendBeacon(CFG.SHEET_URL, new Blob([JSON.stringify({ token: CFG.TOKEN, task: T.task, annotator: T.slot, name: st.name, rows: ids.map(id => K.row(id, st.answers[id])) })], { type: "text/plain;charset=utf-8" }));
   });
-  try { $("howto").open = !localStorage.getItem(STORE + "-howto"); } catch (e) {}
-  $("howto").addEventListener("toggle", () => { try { localStorage.setItem(STORE + "-howto", "1"); } catch (e) {} });
+  // the definitions panel opens on every visit (set in the HTML)
 
   function begin() {
     $("gate").hidden = true; $("work").hidden = false; $("mapbox").hidden = false;

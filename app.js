@@ -173,7 +173,6 @@
   $("prev").addEventListener("click", () => go(idx - 1));
   $("next").addEventListener("click", () => idx === items.length - 1 ? nextOpen() : go(idx + 1));
   $("nextOpen").addEventListener("click", nextOpen);
-  $("dl").addEventListener("click", download);
   $("resumeBtn").addEventListener("click", () => { $("resume").hidden = true; const j = firstOpen(); if (j >= 0) go(j); });
   document.addEventListener("keydown", (e) => {
     if ($("work").hidden || /TEXTAREA|SELECT|INPUT/.test(e.target.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;

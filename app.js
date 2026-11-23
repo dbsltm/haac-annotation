@@ -106,6 +106,16 @@
     msg(`All ${items.length} items are done. Thank you! You can still change any answer.`);
   }
 
+  function firstOpen() { return items.findIndex(it => !K.done(st.answers[it.id])); }
+  function showResume() {
+    const bar = $("resume"); if (!bar) return;
+    const done = items.filter(it => K.done(st.answers[it.id])).length, j = firstOpen();
+    if (!done || j < 0) { bar.hidden = true; return; }
+    $("resumeText").textContent = `Welcome back. You've finished ${done} of ${items.length} items.`;
+    $("resumeBtn").textContent = `Resume at ${items[j].id} →`;
+    bar.hidden = false;
+  }
+
   // ---------- editing + syncing ----------
   function edit(patch, quiet) {
     const id = items[idx].id;
@@ -147,7 +157,7 @@
         const remote = K.fromRow(r), local = st.answers[r.review_id];
         if (!local || (remote.t > (local.t || "") && !st.pending[r.review_id])) { st.answers[r.review_id] = remote; changed = true; }
       });
-      if (changed) { saveLocal(); if (items.length && !$("work").hidden) renderItem(); }
+      if (changed) { saveLocal(); if (items.length && !$("work").hidden) { renderItem(); showResume(); } }
     } catch (e) {}
   }
   function download() {
@@ -164,6 +174,7 @@
   $("next").addEventListener("click", () => idx === items.length - 1 ? nextOpen() : go(idx + 1));
   $("nextOpen").addEventListener("click", nextOpen);
   $("dl").addEventListener("click", download);
+  $("resumeBtn").addEventListener("click", () => { $("resume").hidden = true; const j = firstOpen(); if (j >= 0) go(j); });
   document.addEventListener("keydown", (e) => {
     if ($("work").hidden || /TEXTAREA|SELECT|INPUT/.test(e.target.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;
     let used = true;
@@ -181,7 +192,7 @@
     $("gate").hidden = true; $("work").hidden = false; $("mapbox").hidden = false;
     $("who").textContent = `${st.name} · ${T.label}`;
     try { const s = +localStorage.getItem(STORE + "-idx"); if (s >= 0 && s < items.length) idx = s; } catch (e) {}
-    renderItem(); send();
+    renderItem(); showResume(); send();
   }
   async function boot() {
     loadLocal();
